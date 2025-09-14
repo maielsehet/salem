@@ -17,8 +17,11 @@ return new class extends Migration
     $table->string('type')->nullable();
     $table->text('description')->nullable();
     $table->text('colors')->nullable();   // JSON array
-    $table->text('images')->nullable();   // JSON array of paths
+    $table->text('images')->nullable(); // JSON array of paths
+    $table->float('price_before')->nullable();
+    $table->float('price_after')->nullable();
     $table->timestamps();
+
 });
 
     }

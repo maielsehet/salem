@@ -13,7 +13,18 @@
     <input type="text" name="type" value="{{ $product->type }}"><br><br>
 
     <label>description</label>
-    <input type="number" name="description" value="{{ $product->description }}"><br><br>
+    <input type="text" name="description" value="{{ $product->description }}"><br><br>
+
+
+    <label>Price Before:</label>
+   <input type="number" step="0.01" name="price_before" 
+       value="{{ old('price_before', $product->price_before ?? '') }}"> 
+
+    <br><br>
+    <label>Price After:</label>
+
+   <input type="number" step="0.01" name="price_after" 
+       value="{{ old('price_after', $product->price_after ?? '') }}"> 
 
     <label>colors</label>
     <input type="text" name="colors" value="{{ $product->colors }}"><br><br>

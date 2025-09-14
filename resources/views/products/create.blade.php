@@ -14,6 +14,11 @@
     <label>description</label>
     <input type="text" name="description"><br><br>
 
+    <label>Price Before:</label><input type="number" step="0.01" name="price_before" value="{{ old('price_before', $product->price_before ?? '') }}">
+>
+    <label>Price After:</label>
+    <input type="number" step="0.01" name="price_after" value="{{ old('price_after', $product->price_after ?? '') }}">
+
    <label>Colors:</label>
 <div id="colors-wrapper">
     <input type="text" name="colors[]" placeholder="Enter color"><br>

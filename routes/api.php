@@ -34,3 +34,23 @@ Route::get('/health', function () {
         'version' => '1.0.0'
     ]);
 });
+
+
+
+
+// Route::get('/products', [ProductController::class, 'index']);   // كل المنتجات
+// Route::get('/products/{id}', [ProductController::class, 'show']); // منتج واحد
+
+
+
+// Route::get('/products/{id}/offers', [ProductController::class, 'showWithOffers']);
+
+
+
+
+
+Route::get('/products', [ProductController::class, 'getAllProducts']);
+
+
+Route::get('/products-with-offers', [ProductController::class, 'getProductsWithOffers']);
+

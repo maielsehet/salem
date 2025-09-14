@@ -32,9 +32,18 @@ class Offer extends Model
         return $originalPrice - $this->discount_value;
     }
 
+    // App\Models\Offers.php
+public function products()
+{
+    return $this->belongsToMany(Product::class, 'offer_products', 'offer_id', 'product_id');
+}
+
+
+
     // لو في المستقبل حبينا نضيف علاقة مع Product مثلا
     // public function products()
     // {
     //     return $this->hasMany(Product::class);
     // }
 }
+

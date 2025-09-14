@@ -6,6 +6,8 @@
     <p><strong>Name:</strong> {{ $product->name }}</p>
     <p><strong>Type:</strong> {{ $product->type }}</p>
     <p><strong>Description:</strong> {{ $product->description }}</p>
+    <p><strong>Price Before:</strong> {{ $product->price_before }}</p>
+    <p><strong>Price After:</strong> {{ $product->price_after }}</p>
     <p><strong>Colors:</strong> {{ is_array($product->colors) ? implode(', ', $product->colors) : $product->colors }}</p>
 
     @if($product->images)
