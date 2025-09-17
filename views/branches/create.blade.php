@@ -1,16 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Add Branch</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Branch - Branch Management System</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* Reuse styles */
+    :root { --primary:#000; --secondary:#fff; --accent:#D4AF37; --light:#F5F5F5; --shadow:0 4px 12px rgba(0,0,0,0.15); }
+    body { background:var(--light); font-family:'Segoe UI',sans-serif; }
+    header { background:var(--primary); color:var(--secondary); padding:1rem; }
+    .logo { font-size:1.5rem; font-weight:700; display:flex; align-items:center; }
+    .logo i { margin-right:10px; color:var(--accent); }
+    .container { max-width:800px; margin:20px auto; padding:20px; }
+    .page-title { font-size:2rem; margin-bottom:20px; border-left:5px solid var(--accent); padding-left:15px; }
+    .card { background:var(--secondary); padding:25px; border-radius:8px; box-shadow:var(--shadow); }
+    .form-group { margin-bottom:20px; }
+    label { font-weight:600; display:block; margin-bottom:8px; }
+    .form-control { width:100%; padding:12px; border:1px solid #ccc; border-radius:4px; }
+    .actions-container { display:flex; gap:15px; justify-content:flex-end; }
+    .btn { padding:10px 20px; border:none; border-radius:4px; cursor:pointer; text-decoration:none; font-weight:500; }
+    .btn { background:var(--primary); color:var(--secondary); }
+    .btn-accent { background:var(--accent); color:var(--primary); }
+    footer { background:var(--primary); color:var(--secondary); text-align:center; padding:15px; margin-top:40px; }
+  </style>
 </head>
 <body>
-    <h1>Add Branch</h1>
-    <form action="{{ route('branches.store') }}" method="POST">
-        @csrf
-        <input type="text" name="name" placeholder="Branch Name" required>
-        <input type="text" name="location" placeholder="Location">
-        <input type="text" name="phone" placeholder="Phone">
-        <button type="submit">Save</button>
-    </form>
+  <header>
+    <div class="logo"><i class="fas fa-building"></i> BranchManager</div>
+  </header>
+
+  <div class="container">
+    <h1 class="page-title"><i class="fas fa-plus-circle"></i> Add New Branch</h1>
+    <div class="card">
+      <form id="create-form">
+        <div class="form-group">
+          <label for="new-branch-name">Branch Name</label>
+          <input type="text" id="new-branch-name" class="form-control" placeholder="Enter branch name" required>
+        </div>
+        <div class="form-group">
+          <label for="new-branch-location">Location</label>
+          <input type="text" id="new-branch-location" class="form-control" placeholder="Enter branch location">
+        </div>
+        <div class="form-group">
+          <label for="new-branch-phone">Phone Number</label>
+          <input type="text" id="new-branch-phone" class="form-control" placeholder="Enter phone number">
+        </div>
+        <div class="actions-container">
+          <a href="index.html" class="btn"><i class="fas fa-times"></i> Cancel</a>
+          <button type="submit" class="btn btn-accent"><i class="fas fa-plus-circle"></i> Add Branch</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Branch Management System. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById("create-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("New branch added successfully!");
+      window.location.href = "index.html";
+    });
+  </script>
 </body>
 </html>
